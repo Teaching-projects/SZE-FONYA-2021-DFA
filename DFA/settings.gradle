@@ -1,0 +1,4 @@
+rootProject.name = "DFA"
+include ':app'
+include ':baseapp'
+project(":baseapp").projectDir = file("androidappbase/baseapp")

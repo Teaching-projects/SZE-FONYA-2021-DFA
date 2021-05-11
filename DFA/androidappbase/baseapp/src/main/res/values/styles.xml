@@ -1,0 +1,114 @@
+<resources>
+
+    <style name="ToolbarStyle">
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarArrow" parent="">
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="BottomBarStyle">
+        <item name="android:background">@android:color/white</item>
+        <item name="elevation">16dp</item>
+        <item name="itemIconTint">@drawable/bottom_bar_item_color</item>
+        <item name="itemTextColor">@drawable/bottom_bar_item_color</item>
+    </style>
+
+    <style name="NavItemStyle">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="OpeningHoursStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#c81917</item>
+        <item name="android:textColorPrimary">#FFDDDDDD</item>
+    </style>
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+
+    </style>
+
+
+    <style name="BaseDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@drawable/bg_bottom_sheet</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="DialogTheme" parent="BaseDialog">
+        <item name="android:windowAnimationStyle">@style/DialogAnimation.Window</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--        <item name="android:navigationBarColor">@color/white</item>-->
+    </style>
+
+    <style name="DialogAnimation.Window" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/pop_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--        <item name="android:navigationBarColor">@color/white</item>-->
+    </style>
+
+    <style name="PagerIndicator" />
+
+    <style name="PagerIndicator.Circle"></style>
+
+    <style name="PagerIndicator.Line">
+        <item name="android:colorFocusedHighlight">#ffffff</item>
+        <item name="android:colorBackground">#99000000</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+    <style name="FullScreenDialogWithoutStatusbarStyle" parent="FullScreenDialogStyle">
+
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+<!--        <item name="android:windowFullscreen">true</item>-->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!--        <item name="android:navigationBarColor">@color/transparentLightBg</item>-->
+
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+    </style>
+</resources>

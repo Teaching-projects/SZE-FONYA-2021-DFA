@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Base Android App</string>
+
+    <string name="press_again_to_exit">Press again to exit</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Kedd</string>
+    <string name="wednesday">Szerda</string>
+    <string name="thursday">Csütörtök</string>
+    <string name="friday">Péntek</string>
+    <string name="saturday">Szombat</string>
+    <string name="sunday">Vasárnap</string>
+    <string name="closed">Zárva</string>
+    <string name="no_item_text">Nincs megjeleníthető elem</string>
+</resources>

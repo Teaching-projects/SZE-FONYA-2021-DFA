@@ -1,0 +1,6 @@
+/build
+AndroidAppBase_v2.iml
+/.idea
+/.gradle
+baseapp.zip
+/baseapp-branch/build/

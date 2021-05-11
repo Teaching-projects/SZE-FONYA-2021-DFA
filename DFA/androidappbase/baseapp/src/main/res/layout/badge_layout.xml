@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="16dp"
+             android:layout_height="16dp" xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:background="@drawable/ic_circle">
+    <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent" android:layout_height="match_parent"
+    app:autoSizeMaxTextSize="13sp" app:autoSizeMinTextSize="6sp" app:autoSizeTextType="uniform"
+                                                 android:padding="2dp" android:gravity="center"
+    android:text="" android:id="@+id/number"/>
+
+</FrameLayout>
