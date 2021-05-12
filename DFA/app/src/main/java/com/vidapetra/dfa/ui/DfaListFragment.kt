@@ -30,14 +30,10 @@ class DfaListFragment : BaseBindingFragment<FragmentDfaListBinding>(){
             viewModel.items.observe(viewLifecycleOwner) {
                 data = it
             }
-        }
-
-        /*listener {
-            when(it){
-                is Reminders.Data -> {}
-                is Reminders.Add -> DialogSetReminder().show(childFragmentManager,"")
+            listener {
+                openDfa()
             }
-        }*/
+        }
     }
 
 }
@@ -45,7 +41,7 @@ class DfaListFragment : BaseBindingFragment<FragmentDfaListBinding>(){
 
 
 class DfaListViewModel : ViewModel(){
-    val items = /*(1..20).toList()*/mutableLiveDataOf(listOf<Int>())
+    val items = mutableLiveDataOf(listOf<Int>())
 
     init {
         items.postValue((1..20).toList())

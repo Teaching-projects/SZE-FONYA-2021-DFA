@@ -4,4 +4,5 @@
     <string name="loading">Töltés</string>
     <string name="cancel">Mégsem</string>
     <string name="choose_dfa">Válasszon egy automatát!</string>
+    <string name="add_input">Adjon meg egy bemenetet!</string>
 </resources>

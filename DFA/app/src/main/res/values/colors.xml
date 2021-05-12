@@ -2,6 +2,7 @@
 <resources>
 
     <color name="blueDark">#144978</color>
+    <color name="secondary">#578DBC</color>
     <color name="bg">#cfe8ff</color>
     <color name="item_bg">#edf6ff</color>
 
