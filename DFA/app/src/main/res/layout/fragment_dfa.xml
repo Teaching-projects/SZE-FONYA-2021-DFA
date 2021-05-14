@@ -58,6 +58,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDesc"/>
 
+        <TextView
+            android:id="@+id/tvError"
+            android:text="Nem az ábécének megfelelő inputot adott meg!"
+            android:textSize="20dp"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            visibleOrGone="@{vm.showerror}"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInput"/>
+
         <Button
             android:id="@+id/btnStart"
             android:layout_width="300dp"
