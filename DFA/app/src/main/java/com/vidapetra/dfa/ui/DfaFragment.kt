@@ -30,7 +30,8 @@ class DfaFragment : BaseBindingFragment<FragmentDfaBinding>(){
         super.onViewCreated(view, savedInstanceState)
         btnStart.setOnClickListener {
             if(checkInput(etInput.text.toString(), listOf('a', 'b'))){
-                //
+                viewModel.showerror.postValue(false)
+                openSimulation(0, etInput.text.toString())
             } else {
                 viewModel.showerror.postValue(true)
             }
@@ -42,18 +43,6 @@ class DfaFragment : BaseBindingFragment<FragmentDfaBinding>(){
 
 
 class DfaViewModel : ViewModel(){
-
-    var state1 = State(true, false)
-    var state2 = State(false, true)
-    val states = listOf<State>(state1, state2)
-
-    var transition1 = Transition(state1, state2, 'a')
-    var transition2 = Transition(state1, state1, 'b')
-    var transition3 = Transition(state2, state2, 'b')
-    var transition4 = Transition(state2, state1, 'a')
-    val transitions = listOf<Transition>(transition1, transition2, transition3, transition4)
-
-    var dfa = Dfa(states, transitions)
 
     var showerror = mutableLiveDataOf(false)
 
