@@ -32,15 +32,23 @@ class SimulationFragment : BaseBindingFragment<FragmentSimulationBinding>(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*arguments?.ifContainsInt("dfa") {
-            viewModel.dfa = it
-        }*/
+        arguments?.ifContainsInt("dfa") {
+            viewModel.dfaId = it
+            for(d in viewModel.dfas) {
+                if(d.id == viewModel.dfaId) viewModel.dfa = d
+            }
+        }
         arguments?.ifContainsString("input") {
             viewModel.end.postValue(it)
         }
 
-        // ide még kell ha más automata jön
-        dfa.setImageResource(R.drawable.dfa1_1)
+        // viewmodel dfa megadása id alapján
+
+
+
+        val name = "dfa${(viewModel.dfaId) + 1}_1"
+        val resourceId = resources.getIdentifier(name, "drawable", context?.packageName)
+        dfa.setImageResource(resourceId)
 
 
         next.setOnClickListener {
@@ -53,15 +61,12 @@ class SimulationFragment : BaseBindingFragment<FragmentSimulationBinding>(){
                 viewModel.end.postValue(aktend)
                 viewModel.dfa.aktState = viewModel.dfa.nextState(aktbegin[aktbegin.length - 1])
                 if(aktend.isNotEmpty()) {
-                    val name = "dfa1_" + (viewModel.dfa.aktState + 1)
-                    val resourceId = resources.getIdentifier(name, "drawable", context?.getPackageName())
+                    val name = "dfa${(viewModel.dfaId) + 1}_${(viewModel.dfa.aktState + 1)}"
+                    val resourceId = resources.getIdentifier(name, "drawable", context?.packageName)
                     dfa.setImageResource(resourceId)
                 } else {
-                    // tovább nyíl csere
-
-
-                    val name = "dfa1_" + (viewModel.dfa.aktState + 1) + "_end"
-                    val resourceId = resources.getIdentifier(name, "drawable", context?.getPackageName())
+                    val name = "dfa${(viewModel.dfaId) + 1}_${(viewModel.dfa.aktState + 1)}_end"
+                    val resourceId = resources.getIdentifier(name, "drawable", context?.packageName)
                     dfa.setImageResource(resourceId)
                 }
             }
@@ -75,11 +80,15 @@ class SimulationFragment : BaseBindingFragment<FragmentSimulationBinding>(){
                 aktbegin = aktbegin.substring(0, aktbegin.length - 1)
                 viewModel.begin.postValue(aktbegin)
                 viewModel.end.postValue(aktend)
-                val name = "dfa1_" + (viewModel.dfa.aktState + 1)
-                val resourceId = resources.getIdentifier(name, "drawable", context?.getPackageName())
+                val name = "dfa${(viewModel.dfaId) + 1}_${(viewModel.dfa.aktState + 1)}"
+                val resourceId = resources.getIdentifier(name, "drawable", context?.packageName)
                 dfa.setImageResource(resourceId)
 
             }
+        }
+
+        btnStop.setOnClickListener {
+            Router.back()
         }
     }
 
@@ -87,10 +96,12 @@ class SimulationFragment : BaseBindingFragment<FragmentSimulationBinding>(){
 
 
 
-class SimulationViewModel : ViewModel(){
+class SimulationViewModel : DfaViewModel(){
 
-    var state1 = State(true, false)
-    var state2 = State(false, true)
+
+
+    var state1 = State(0, true, false)
+    var state2 = State(1, false, true)
     val states = listOf(state1, state2)
 
     var transition1 = Transition(0, 1, 'a')
@@ -99,7 +110,8 @@ class SimulationViewModel : ViewModel(){
     var transition4 = Transition(1, 0, 'a')
     val transitions = listOf<Transition>(transition1, transition2, transition3, transition4)
 
-    var dfa = Dfa(states, transitions)
+    /*var dfaId: Int = 0
+    var dfa = Dfa(0, states, transitions, listOf('a', 'b'), "")*/
 
     var begin = mutableLiveDataOf("")
     var end = mutableLiveDataOf("")
@@ -112,6 +124,6 @@ class SimulationViewModel : ViewModel(){
 
 fun openSimulation(dfa: Int, input: String){
     Router.loadFragment(SimulationFragment().apply {
-        arguments = bundleOf("input" to input)
+        arguments = bundleOf("dfa" to dfa, "input" to input)
     }, params = {forceNoAddAgain()})
 }

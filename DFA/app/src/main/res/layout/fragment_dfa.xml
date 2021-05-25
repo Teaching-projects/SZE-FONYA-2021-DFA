@@ -27,20 +27,35 @@
             app:layout_constraintRight_toRightOf="parent"
             android:textStyle="bold"/>
 
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="A feladat leírása"
+            android:textColor="@color/blueDark"
+            android:textStyle="bold"
+            android:background="@drawable/item_bg"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:padding="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"/>
+
         <ImageView
             android:id="@+id/dfa"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:padding="5dp"
             android:scaleType="centerCrop"
             android:src="@drawable/dfa1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
         <TextView
             android:id="@+id/tvDesc"
-            android:text="@string/add_input"
             android:textSize="20dp"
             android:textColor="@color/blueDark"
             android:textStyle="italic"
@@ -71,18 +86,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etInput"/>
 
-        <Button
+        <TextView
             android:id="@+id/btnStart"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:text="Start"
-            android:textStyle="normal"
+            android:background="@drawable/positiv_button_bg"
+            android:text="@string/start"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etInput" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 0,
+    "states": [
+      {
+        "id": 0,
+        "init": true,
+        "accept": false
+      },
+      {
+        "id": 1,
+        "init": false,
+        "accept": true
+      }
+    ],
+    "transitions": [
+      {
+        "from": 0,
+        "to": 1,
+        "with": "a"
+      },
+      {
+        "from": 0,
+        "to": 0,
+        "with": "b"
+      },
+      {
+        "from": 1,
+        "to": 0,
+        "with": "a"
+      },
+      {
+        "from": 1,
+        "to": 1,
+        "with": "b"
+      }
+    ],
+    "abc": [ "a", "b" ],
+    "description": "#a % 2 = 1",
+    "imageName":  "dfa1"
+  },
+  {
+    "id": 1,
+    "states": [
+      {
+        "id": 0,
+        "init": true,
+        "accept": false
+      },
+      {
+        "id": 1,
+        "init": false,
+        "accept": true
+      }
+    ],
+    "transitions": [
+      {
+        "from": 0,
+        "to": 1,
+        "with": "a"
+      },
+      {
+        "from": 0,
+        "to": 0,
+        "with": "b"
+      },
+      {
+        "from": 1,
+        "to": 0,
+        "with": "a"
+      },
+      {
+        "from": 1,
+        "to": 1,
+        "with": "b"
+      }
+    ],
+    "abc": [ "a", "b" ],
+    "description": "#a % 2 = 1",
+    "imageName": "dfa2"
+  },
+  {
+    "id": 2,
+    "states": [
+      {
+        "id": 0,
+        "init": true,
+        "accept": false
+      },
+      {
+        "id": 1,
+        "init": false,
+        "accept": true
+      }
+    ],
+    "transitions": [
+      {
+        "from": 0,
+        "to": 1,
+        "with": "a"
+      },
+      {
+        "from": 0,
+        "to": 0,
+        "with": "b"
+      },
+      {
+        "from": 1,
+        "to": 0,
+        "with": "a"
+      },
+      {
+        "from": 1,
+        "to": 1,
+        "with": "b"
+      }
+    ],
+    "abc": [ "a", "b" ],
+    "description": "#a % 2 = 1",
+    "imageName": "dfa3"
+  }
+]
