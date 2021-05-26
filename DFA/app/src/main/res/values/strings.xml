@@ -6,4 +6,6 @@
     <string name="choose_dfa">Válasszon egy automatát!</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="error_message">Nem az ábécének megfelelő inputot adott meg!</string>
+    <string name="empty_input_error_message">Nem adott meg inputot!</string>
 </resources>

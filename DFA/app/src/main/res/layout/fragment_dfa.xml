@@ -27,6 +27,16 @@
             app:layout_constraintRight_toRightOf="parent"
             android:textStyle="bold"/>
 
+        <ImageView
+            android:id="@+id/vissza"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/vissza"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
@@ -75,7 +85,7 @@
 
         <TextView
             android:id="@+id/tvError"
-            android:text="Nem az ábécének megfelelő inputot adott meg!"
+            android:text="@string/error_message"
             android:textSize="20dp"
             android:textColor="@color/red"
             android:textStyle="bold"

@@ -36,11 +36,20 @@ class DfaFragment : BaseBindingFragment<FragmentDfaBinding>(){
                 if(d.id == viewModel.dfaId) viewModel.dfa = d
             }
         }
+        vissza.setOnClickListener {
+            Router.back()
+        }
         btnStart.setOnClickListener {
-            if(checkInput(etInput.text.toString(), listOf('a', 'b'))){
-                viewModel.showerror.postValue(false)
-                openSimulation(viewModel.dfaId, etInput.text.toString())
+            if (etInput.text.toString() != "") {
+                if (checkInput(etInput.text.toString(), viewModel.dfa.abc)) {
+                    viewModel.showerror.postValue(false)
+                    openSimulation(viewModel.dfaId, etInput.text.toString())
+                } else {
+                    tvError.text = applicationContext.resources.getText(R.string.error_message)
+                    viewModel.showerror.postValue(true)
+                }
             } else {
+                tvError.text = applicationContext.resources.getText(R.string.empty_input_error_message)
                 viewModel.showerror.postValue(true)
             }
         }
